@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Box } from '@mui/material';
 
-import Path from './components/Test';
+import {HomePage} from './components';
+
 
 
 
@@ -15,7 +16,7 @@ const App = () => (
                 {/* <Route/>
                 <Route/>
                 <Route/> */}
-                <Route path="/path" exact element={ <Path/> }/>
+                <Route path="/" exact element={ <HomePage/> }/>
             </Routes>
         </Box>
     </BrowserRouter>
