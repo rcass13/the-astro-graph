@@ -12,14 +12,14 @@ const options = {
         day: 'today'
     },
     headers: {
-        'X-RapidAPI-Key': process.env.API_KEY,
+        'X-RapidAPI-Key': 'ca8abd6dc7msh6e57db756918508p11b024jsne3ebcd61d8ee',
         'X-RapidAPI-Host': 'sameer-kumar-aztro-v1.p.rapidapi.com'
     }
 }
 
 export const fetchFromAPI = async (url) => {
     const { data } = await axios( options);
-    console.log(data)
+
     return data;
 }
 
