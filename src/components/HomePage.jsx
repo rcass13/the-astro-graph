@@ -19,12 +19,12 @@ const HomePage = () => {
         return (
             astroItems &&
             <Box minHeight="90vh" sx={{ bgcolor: 'gray'}}>
-                <Stack>
+                <Box>
                     <Typography>Color of Your Birth Sign is: {astroItems.color}</Typography>
-                </Stack>
-                <Stack>
+                </Box>
+                <Box>
                     <Typography>Your Lucky Number is: {astroItems.lucky_number}</Typography>
-                </Stack>
+                </Box>
             </Box>
         )
     
