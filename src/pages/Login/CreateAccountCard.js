@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
 import CustomInput from '../../components/CustomInput';
-
+import { Card, Form, Button, Container } from 'react-bootstrap';
+// import 'bootswatch/dist/slate/bootstrap.min.css'; // Added this :boom
+import '../../styles/bootstrap.min.css';
+import '../../styles/login.css';
 
 const CreateAccountCard = () => {
   const [name, setName] = useState('');
@@ -12,7 +14,7 @@ const CreateAccountCard = () => {
   const [accounts, setAccounts] = useState([]);
 
   useEffect(() => {
-    const isValidEmail = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/.test(email);
+    const isValidEmail = /^[A-Za-z0-9_!#$%&'*+/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/.test(email);
     if (isValidEmail) {
         setEmailError(null);
     } else {
@@ -47,7 +49,6 @@ const CreateAccountCard = () => {
       .then(data => {
         
         setAccounts([...accounts, {name: data.name, email: data.email, password: data.password, birthday: data.birthdate}]);
-  console.log('Success:', data);
         console.log('Success:', data);
       })
       .catch(error => {
@@ -57,39 +58,44 @@ const CreateAccountCard = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-        <CustomInput
-            type="text"
-            label="Name"
-            name="name"
-            value={name}
-            onChange={setName}
-        />
-        <CustomInput
-            type="email"
-            label="Email"
-            name="email"
-            value={email}
-            onChange={setEmail}
-            error={emailError}
-        />
-         <CustomInput
-            type="password"
-            label="Password"
-            name="password"
-            value={password}
-            onChange={setPassword}
-        />
-         <CustomInput
-            type="date"
-            label="Birthdate"
-            name="birthdate"
-            value={birthdate}
-            onChange={setBirthdate}
-        />
-      
-      <button type="submit">Create Account</button>
-    </form>
+    <Card className="card border-secondary mb-3 d-flex" style={{width: '40 rem' }}>
+      <Card.Header className="card-header text-white" as="h5">Create Account</Card.Header>
+      <Card.Body className="justify-content-center align-items-center">
+        <Form onSubmit={handleSubmit}>
+          <CustomInput className="form-control"
+              type="text"
+              label="Name"
+              name="name"
+              value={name}
+              onChange={setName}
+          />
+          <CustomInput className="form-control"
+              type="email"
+              label="Email"
+              name="email"
+              value={email}
+              onChange={setEmail}
+              error={emailError}
+          />
+           <CustomInput className="form-control"
+              type="password"
+              label="Password"
+              name="password"
+              value={password}
+              onChange={setPassword}
+          />
+           <CustomInput className="form-control"
+              type="date"
+              label="Birthdate"
+              name="birthdate"
+              value={birthdate}
+              onChange={setBirthdate}
+          />
+          <Button className="btn btn-secondary" type="submit">Create Account</Button>
+        </Form>
+      </Card.Body>
+    </Card>
+
   )
   }
 

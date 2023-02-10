@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 import CustomInput from '../../components/CustomInput';
+import { Card, Form, Button, Container } from 'react-bootstrap';
+// import 'bootswatch/dist/vapor/bootstrap.min.css'; // Added this :boom:
+import '../../styles/bootstrap.min.css';
+import '../../styles/login.css';
 
 const LoginCard = () => {
     const [email, setEmail] = useState('');
@@ -46,25 +50,28 @@ const LoginCard = () => {
     };
   
     return (
-      <form onSubmit={handleSubmit}>
-         <CustomInput
-            type="email"
-            label="Email"
-            name="email"
-            value={email}
-            onChange={setEmail}
-            error={emailError}
-        />
-         <CustomInput
-            type="password"
-            label="Password"
-            name="password"
-            value={password}
-            onChange={setPassword}
-        />
-        
-        <button type="submit">Login</button>
-      </form>
+      <Card className="card border-primary mb-3"style={{width: '40rem' }}>
+      <Card.Header as="h5"className="text-white">Login</Card.Header>
+      <Card.Body className="justify-content-center align-items-center">
+        <Form onSubmit={handleSubmit}>
+          <CustomInput className="form-control"
+              type="email"
+              label="Email"
+              name="email"
+              value={email}
+              onChange={setEmail}
+              error={emailError}
+          />
+           <CustomInput className="form-control"
+              type="password"
+              label="Password"
+              name="password"
+              value={password}
+          />
+          <Button className="btn btn-primary" type="submit">Login</Button>
+        </Form>
+      </Card.Body>
+    </Card>
     );
   };
 

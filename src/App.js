@@ -1,6 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter, Routes, Route, useHistory } from 'react-router-dom';
 import { Box } from '@mui/material';
+import './styles/bootstrap.min.css'; // Added this :boom:
+
+
+
+
 
 
 // import Login from './components/Login';
@@ -12,6 +17,12 @@ import {HomePage} from './components';
 
 
 import Login from './pages/Login';
+
+
+const App = () => (
+    <BrowserRouter>
+    
+        <Box>
 
 const App = () =>{ 
 const [isAuth, setIsAuth] = useState(false)
@@ -43,6 +54,7 @@ asyncApiAuthCall()
 },[])
     return <BrowserRouter>
         {isAuth ?
+
             <Routes>
                 {/* example <Route path="/" exact element={ <Frontpage />}/> */}
 
