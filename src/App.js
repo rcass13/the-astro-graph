@@ -1,20 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import { BrowserRouter, Routes, Route, useHistory } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Redirect } from 'react-router-dom';
 import { Box } from '@mui/material';
 
 
 // import Login from './components/Login';
 // import CreateAccount from './components/CreateAccount';
 
-import {HomePage} from './components';
-
-
-
-
+import { HomePage } from './components';
 import Login from './pages/Login';
 
 const App = () =>{ 
-const [isAuth, setIsAuth] = useState(false)
+const [isAuth, setIsAuth] = useState(false);
 const [userInfo, setUserInfo] = useState()
 useEffect(()=>{
 const asyncApiAuthCall = async ()=>{
@@ -44,23 +40,16 @@ asyncApiAuthCall()
     return <BrowserRouter>
         {isAuth ?
             <Routes>
-                {/* example <Route path="/" exact element={ <Frontpage />}/> */}
-
-
-
-                {/* <Route/>
-                <Route/>
-                <Route/> */}
                 <Route path="/" exact element={ <HomePage/> }/>
-
+                {/* <Route path="/users" exact element= {<Users/>} /> */}
+                <Route path="*" element={<div>404 Not Found</div>}/>
             </Routes>
             :
             <Routes>
-                <Route path="/Login" exact element ={<Login/>}/>
-                {/* <Route path="/Login" exact element ={<CreateAccount/>}/> */}
-                <Route/>
+                <Route path="/" exact element ={ <Login/> }/>
+                <Route path="*" element ={ <Login/> }/>
             </Routes>
-    }
+        }
     </BrowserRouter>
     }
   
