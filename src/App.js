@@ -24,7 +24,7 @@ const App = () => (
         <Box>
             <Routes>
                 {/* example <Route path="/" exact element={ <Frontpage />}/> */}
-
+                
                 <Route path="/Login" exact element ={<Login/>}/>
                 {/* <Route path="/Login" exact element ={<CreateAccount/>}/> */}
                 <Route/>

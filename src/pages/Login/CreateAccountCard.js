@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CustomInput from '../../components/CustomInput';
-import { Card, Form, Button, Container } from 'react-bootstrap';
+import { Card, Form, Button } from 'react-bootstrap';
 // import 'bootswatch/dist/slate/bootstrap.min.css'; // Added this :boom
 import '../../styles/bootstrap.min.css';
 import '../../styles/login.css';

@@ -4,10 +4,12 @@ import LoginCard from "./LoginCard";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootswatch/dist/vapor/bootstrap.min.css'; // Added this :boom:
 import '../../styles/bootstrap.min.css';
+import LoginHeader from "./LoginHeader";
 
 function Login() {
     return (
         <div>
+            <LoginHeader/>
             <LoginCard />
             <CreateAccountCard/>
         </div>
