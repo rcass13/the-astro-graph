@@ -1,6 +1,4 @@
 const router = require('express').Router();
-const { request } = require('express');
-const { findAll } = require('../../models/Users.js');
 const User = require('../../models/Users.js');
 
 
@@ -58,7 +56,7 @@ router.post('/signup', async (req, res) => {
                 .json({ user: userData, message: 'User already exist!'});
             return
         }
-        userData = await User.create({ truncate: true, 
+        userData = await User.create({ 
             email: req.body.email,
             password: req.body.password,
             birthday: req.body.birthday,

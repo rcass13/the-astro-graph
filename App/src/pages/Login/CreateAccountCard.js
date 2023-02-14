@@ -10,7 +10,7 @@ const CreateAccountCard = () => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState();
   const [password, setPassword] = useState('');
-  const [birthdate, setBirthdate] = useState('');
+  const [birthday, setBirthday] = useState('');
   const [accounts, setAccounts] = useState([]);
 
   useEffect(() => {
@@ -29,10 +29,10 @@ const CreateAccountCard = () => {
       name: name,
       email: email,
       password: password,
-      birthdate: birthdate
+      birthday: birthday
     };
 
-    fetch('http://localhost:3000/api/create-account', {
+    fetch('http://localhost:3001/api/auth/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ const CreateAccountCard = () => {
       })
       .then(data => {
         
-        setAccounts([...accounts, {name: data.name, email: data.email, password: data.password, birthday: data.birthdate}]);
+        setAccounts([...accounts, {name: data.name, email: data.email, password: data.password, birthday: data.birthday}]);
         console.log('Success:', data);
       })
       .catch(error => {
@@ -86,10 +86,10 @@ const CreateAccountCard = () => {
           />
            <CustomInput className="form-control"
               type="date"
-              label="Birthdate"
-              name="birthdate"
-              value={birthdate}
-              onChange={setBirthdate}
+              label="Birthday"
+              name="birthday"
+              value={birthday}
+              onChange={setBirthday}
           />
           <Button className="btn btn-secondary" type="submit">Create Account</Button>
         </Form>

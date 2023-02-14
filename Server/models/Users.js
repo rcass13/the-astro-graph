@@ -38,7 +38,6 @@ User.init(
     birthday: {
         type: DataTypes.INTEGER,
         allowNull: false,
-       
     },
   },
   {
