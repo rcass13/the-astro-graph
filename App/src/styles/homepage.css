@@ -1,0 +1,14 @@
+#homepageNavbar{
+        height: 50px;
+        width: 100%;
+        margin-bottom: 30px;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        padding: 35px;
+}
+
+#bodyText{
+    justify-content: center;
+    align-items: center;
+}
