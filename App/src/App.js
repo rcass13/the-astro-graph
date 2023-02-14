@@ -21,7 +21,7 @@ import HomePage from './pages/Homepage';
     
 
 const App = () =>{ 
-const [isAuth, setIsAuth] = useState(true);
+const [isAuth, setIsAuth] = useState(false);
 const [userInfo, setUserInfo] = useState()
 useEffect(()=>{
 const asyncApiAuthCall = async ()=>{
