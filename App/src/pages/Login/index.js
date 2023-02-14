@@ -8,7 +8,7 @@ import LoginHeader from "./LoginHeader";
 
 function Login() {
     return (
-        <div>
+        <div className="bg-dark">
             <LoginHeader/>
             <LoginCard />
             <CreateAccountCard/>

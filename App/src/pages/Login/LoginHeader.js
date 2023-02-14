@@ -6,7 +6,7 @@ import '../../styles/login.css';
 
 const LoginHeader = () => {
 return(
-<Navbar className="text-center">
+<Navbar id="loginNavbar"className="text-center">
 AstroLOGIC
 </Navbar>
 )
