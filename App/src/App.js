@@ -15,13 +15,11 @@ import { HomePage } from './components';
 import Login from './pages/Login';
 
 
-const App = () => (
-    <BrowserRouter>
+
     
-        <Box>
 
 const App = () =>{ 
-const [isAuth, setIsAuth] = useState(false);
+const [isAuth, setIsAuth] = useState(true);
 const [userInfo, setUserInfo] = useState()
 useEffect(()=>{
 const asyncApiAuthCall = async ()=>{
