@@ -2,13 +2,13 @@ import React from 'react';
 import { Navbar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../styles/bootstrap.min.css';
-import '../../styles/login.css';
+import '../../styles/homepage.css';
 
-const LoginHeader = () => {
+const HomepageHeader = () => {
 return(
-<Navbar id="loginNavbar"className="text-dark bg-light text-center">
+<Navbar id="homepageNavbar"className="navbar navbar-expand-lg text-dark bg-light">
 AstroLOGIC
 </Navbar>
 )
 }
-export default LoginHeader;
+export default HomepageHeader;

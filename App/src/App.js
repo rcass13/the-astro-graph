@@ -11,15 +11,17 @@ import './styles/bootstrap.min.css'; // Added this :boom:
 // import Login from './components/Login';
 // import CreateAccount from './components/CreateAccount';
 
-import { HomePage } from './components';
+// import { HomePage } from './components';
 import Login from './pages/Login';
+import HomePage from './pages/Homepage';
+
 
 
 
     
 
 const App = () =>{ 
-const [isAuth, setIsAuth] = useState(false);
+const [isAuth, setIsAuth] = useState(true);
 const [userInfo, setUserInfo] = useState()
 useEffect(()=>{
 const asyncApiAuthCall = async ()=>{
@@ -51,8 +53,7 @@ asyncApiAuthCall()
 
             <Routes>
                 <Route path="/" exact element={ <HomePage/> }/>
-                {/* <Route path="/users" exact element= {<Users/>} /> */}
-                <Route path="*" element={<div>404 Not Found</div>}/>
+                <Route path="*" element={<HomePage/> }/>
             </Routes>
             :
             <Routes>
