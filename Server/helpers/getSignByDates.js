@@ -28,4 +28,9 @@ function getSignByDates(dayOfYear) {
     return days[0].sign;
 }
 
+
+
+
+
 module.exports = getSignByDates;
+

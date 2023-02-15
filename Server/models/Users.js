@@ -36,9 +36,12 @@ User.init(
       },
     },
     birthday: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.STRING,
         allowNull: false,
     },
+    sign: {
+      type: DataTypes.STRING
+    }
   },
   {
     hooks: {
