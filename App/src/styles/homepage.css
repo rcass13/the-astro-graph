@@ -13,7 +13,8 @@
   
   #homepageNavbar .navbar-brand {
     font-size: 48px; /* increase font size of brand */
-    margin-right: 50px;
+    margin-right: 35%;
+
   }
   
   #homepageNavbar .nav-link {
