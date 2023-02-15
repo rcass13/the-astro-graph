@@ -23,42 +23,47 @@ import HomePage from './pages/Homepage';
 const App = () =>{ 
 const [isAuth, setIsAuth] = useState(false);
 const [userInfo, setUserInfo] = useState()
-useEffect(()=>{
-const asyncApiAuthCall = async ()=>{
-    // const userData={
-    //     user:"test@test.com",
-    //     password:"123password"
-    // }
-    // const options={
-    //     method:"POST",
-    //     body:JSON.stringify(userData),
-    //     header:{}
-    // }
-    // fetch("http://locahost:4000/api/auth",options)
-    // .then(data=>data.json())
-    // .then(data=>setUserInfo(data))
-    // .catch(e=>console.log("error"))
-
-    // let response =await utilApiCall()
-    // if(response){
-    //     setIsAuth(true)
-    // }else {
-    //     setIsAuth(false)
-    // }
+useEffect( () => {
+    getUserInfoApi();
+}, [])
+function getUserInfoApi() {
+    fetch('http://localhost:3001/api/auth/', {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+      
+    })
+      .then(res => {
+        if (!res.ok) {
+          throw Error(res.statusText);
+        }
+        return res.json();
+      })
+      .then(data => {
+        setAuth(data.isAuth)
+        console.log('Success:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
 }
-asyncApiAuthCall()
-},[])
+
+    const setAuth = (val) => {
+        setIsAuth(val)
+    }
+    console.log(isAuth)
     return <BrowserRouter>
         {isAuth ?
 
             <Routes>
-                <Route path="/" exact element={ <HomePage/> }/>
+                <Route path="/" exact element={ <HomePage /> }/>
                 <Route path="*" element={<HomePage/> }/>
             </Routes>
             :
             <Routes>
-                <Route path="/" exact element ={ <Login/> }/>
-                <Route path="*" element ={ <Login/> }/>
+                <Route path="/" exact element ={ <Login setAuth={setAuth}/> }/>
+                <Route path="*" element ={ <Login setAuth={setAuth}/> }/>
             </Routes>
         }
     </BrowserRouter>
