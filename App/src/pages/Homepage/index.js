@@ -9,7 +9,7 @@ import '../../styles/bootstrap.min.css';
 
 function Homepage() {
     return (
-        <div className="bg-dark">
+        <div className="bg-none">
             <HomepageHeader/>
             <HomePage/>
         </div>
