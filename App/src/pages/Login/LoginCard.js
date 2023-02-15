@@ -42,6 +42,7 @@ const LoginCard = ({setAuth}) => {
           return res.json();
         })
         .then(data => {
+          setAuth(true)
           console.log('Login successful:', data);
         })
         .catch(error => {
@@ -67,6 +68,7 @@ const LoginCard = ({setAuth}) => {
               label="Password"
               name="password"
               value={password}
+              onChange={setPassword}
           />
           <Button className="btn btn-primary" type="submit">Login</Button>
         </Form>

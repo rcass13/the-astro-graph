@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+const getSignByDates = require('../../helpers/getSignByDates.js');
 const User = require('../../models/Users.js');
 
 
@@ -89,7 +90,8 @@ router.post('/signup', async (req, res) => {
             email: req.body.email,
             password: req.body.password,
             birthday: req.body.birthday,
-            name: req.body.name
+            name: req.body.name,
+            sign: getSignByDates(req.body.birthday)
         })
         if (userData !== null){
             console.log(req.session)
