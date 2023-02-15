@@ -1,8 +1,17 @@
 const router = require('express').Router();
 
-const getSignByDates = require('../../helpers/getSignByDates.js');
+const formatDateToDayOfYear = require('../../helpers/getSignByDates.js');
+const getSignByDates = require('../../helpers/getSignByDates');
 const User = require('../../models/Users.js');
 
+
+
+Date.prototype.getDayOfYear = function() {
+    var start = new Date(this.getFullYear(), 0, 0);
+    var diff = this - start;
+    var oneDay = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / oneDay);
+  }
 
 router.get('/', (req, res) => {
     console.log(req.session)
@@ -86,12 +95,14 @@ router.post('/signup', async (req, res) => {
                 .json({ user: userData, message: 'User already exist!'});
             return
         }
+        let dateObj = new Date(req.body.birthday);
+        let dayOfYear = dateObj.getDayOfYear();
         userData = await User.create({ 
             email: req.body.email,
             password: req.body.password,
             birthday: req.body.birthday,
             name: req.body.name,
-            sign: getSignByDates(req.body.birthday)
+            sign: getSignByDates(dayOfYear)
         })
         if (userData !== null){
             console.log(req.session)
