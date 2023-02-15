@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 
+
+
+
 console.log(process.env.API_KEY)
 const BASE_URL = 'https://sameer-kumar-aztro-v1.p.rapidapi.com/';
 
