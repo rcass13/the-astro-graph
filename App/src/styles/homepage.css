@@ -1,14 +1,61 @@
-#homepageNavbar{
-        height: 50px;
-        width: 100%;
-        margin-bottom: 30px;
-        justify-content: center;
-        align-items: center;
-        font-size: 40px;
-        padding: 35px;
+#homepageNavbar {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 30px;
+    justify-content: space-between; /* spread out contents */
+    align-items: center;
+    font-size: 48px; /* increase font size */
+    padding: 20px; /* reduce padding */
+    display: flex;
+    flex-direction: row;
+    
+  }
+  
+  #homepageNavbar .navbar-brand {
+    font-size: 48px; /* increase font size of brand */
+    margin-right: 50px;
+  }
+  
+  #homepageNavbar .nav-link {
+    font-size: 24px; /* adjust font size of links */
+    margin-left: 20px; /* add some margin between links */
+    margin-right: 50px;
+  }
+
+  .nav-link-expand {
+    transition: all 0.3s ease-in-out;
+    padding: 5px 10px;
+  }
+  
+  .nav-link-expand:hover {
+    padding: 10px 20px;
+  }
+  
+  #homepageNavbar button {
+    font-size: 24px; /* adjust font size of button */
+    margin-left: 20px; /* add some margin between button and links */
+  }
+  
+#bodyText p {
+    line-height: 30px;
 }
 
-#bodyText{
+#logoutBtn{
+    font-size: 30px;
+    max-height: fit-content;
+}
+
+.card{
+    border-width: 5px;
+    border-radius: 5px;
+    
+}
+
+#textBlock{
     justify-content: center;
     align-items: center;
+    margin: 40px auto;
+    text-align: center;
+    padding: 40px;
+   
 }
