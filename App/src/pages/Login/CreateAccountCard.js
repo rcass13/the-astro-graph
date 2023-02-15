@@ -5,7 +5,7 @@ import { Card, Form, Button } from 'react-bootstrap';
 import '../../styles/bootstrap.min.css';
 import '../../styles/login.css';
 
-const CreateAccountCard = () => {
+const CreateAccountCard = ({setAuth}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState();
@@ -37,6 +37,7 @@ const CreateAccountCard = () => {
       headers: {
         'Content-Type': 'application/json'
       },
+      withCredentials: true,
       body: JSON.stringify(formData)
       
     })
@@ -49,6 +50,7 @@ const CreateAccountCard = () => {
       .then(data => {
         
         setAccounts([...accounts, {name: data.name, email: data.email, password: data.password, birthday: data.birthday}]);
+        setAuth(true)
         console.log('Success:', data);
       })
       .catch(error => {

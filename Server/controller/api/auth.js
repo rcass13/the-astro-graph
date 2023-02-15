@@ -3,7 +3,14 @@ const router = require('express').Router();
 const User = require('../../models/Users.js');
 
 
-
+router.get('/', (req, res) => {
+    console.log(req.session)
+    if(req.session.isAuth){
+        res.json({isAuth: req.session.isAuth})
+    }else {
+        res.json({isAuth: req.session.isAuth})
+    }
+}) 
 
 // GET one user
 router.get('/:id', async (req, res) => {
@@ -18,7 +25,7 @@ router.get('/:id', async (req, res) => {
       res.status(500).json(err);
     }
   });
-  
+
 //Sign In
 router.post('/login', async (req, res) => {
     console.log(req.body)
@@ -36,7 +43,12 @@ router.post('/login', async (req, res) => {
                 .json({message: 'Incorrect Email or Password!'});
             return;
         }
-        const validPassword = await dbUserData.checkPassword(req.body.password);
+        console.log(dbUserData, req.body.password);
+        
+        // const validPassword = await dbUserData.checkPassword(req.body.password);
+        const validPassword = dbUserData.dataValues.password == req.body.password
+    
+        console.log(validPassword)
 
         if (!validPassword) {
             res
@@ -45,12 +57,12 @@ router.post('/login', async (req, res) => {
             return;
         }
         req.session.save(() => {
-            req.session.loggedIn = true;
-            console.log(req.session.cookie);
+            req.session.isAuth = true;
+            console.log(req.session);
       
             res
               .status(200)
-              .json({ user: dbUserData, message: 'You are now logged in!' });
+              .json({ user: dbUserData, isAuth: true });
           });
         } catch (err) {
           console.log(err);
@@ -80,12 +92,18 @@ router.post('/signup', async (req, res) => {
             name: req.body.name
         })
         if (userData !== null){
-            res
-                .status(200)
-                .json({
-                    data:userData,
-                    message: 'User has been successfully created!'
-                })
+            console.log(req.session)
+            req.session.save(() =>{ 
+                req.session.isAuth = true
+                console.log(req.session);
+                res
+                    .status(200)
+                    .json({
+                        data:userData,
+                        isAuth: true
+                        
+                    })
+            })
         }else {
             res 
                 .status(409)

@@ -6,12 +6,12 @@ import 'bootswatch/dist/vapor/bootstrap.min.css'; // Added this :boom:
 import '../../styles/bootstrap.min.css';
 import LoginHeader from "./LoginHeader";
 
-function Login() {
+function Login({setAuth}) {
     return (
         <div className="bg-dark">
-            <LoginHeader/>
-            <LoginCard />
-            <CreateAccountCard/>
+            <LoginHeader />
+            <LoginCard setAuth={setAuth}/>
+            <CreateAccountCard setAuth={setAuth}/>
         </div>
     );
 }

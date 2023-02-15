@@ -5,7 +5,7 @@ import { Card, Form, Button} from 'react-bootstrap';
 import '../../styles/bootstrap.min.css';
 import '../../styles/login.css';
 
-const LoginCard = () => {
+const LoginCard = ({setAuth}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState();
@@ -32,6 +32,7 @@ const LoginCard = () => {
         headers: {
           'Content-Type': 'application/json'
         },
+        withCredentials: true,
         body: JSON.stringify(loginData)
       })
         .then(res => {
