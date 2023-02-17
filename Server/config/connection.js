@@ -7,7 +7,7 @@ console.log(process.env)
 const sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
-    "CutMeinfor10%!",
+    "Cool",
     {
       host: '127.0.0.1',
       dialect: 'mysql',
