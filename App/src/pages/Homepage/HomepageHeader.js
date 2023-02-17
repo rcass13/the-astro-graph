@@ -15,8 +15,14 @@ const HomepageHeader = () => {
     setShowModal(false);
   };
 
+function refreshPage() {
+  window.location.reload(false);
+  
+}
+  
   return (
     <>
+    
       <Navbar
         id="homepageNavbar"
         className="navbar navbar-expand-lg text-dark bg-light"
@@ -39,9 +45,9 @@ const HomepageHeader = () => {
               </Nav.Link>
               <Button
                 id="logoutBtn"
-                className="btn btn-secondary my-2 my-sm-0"
-                href="#"
-              >
+                className="btn btn-secondary my-2 my-sm-0" 
+                onClick={refreshPage}>
+              
                 Logout
               </Button>
             </Nav>
