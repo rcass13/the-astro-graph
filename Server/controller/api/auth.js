@@ -112,7 +112,7 @@ router.post('/signup', async (req, res) => {
                 res
                     .status(200)
                     .json({
-                        data:userData,
+                        user: userData,
                         isAuth: true
                         
                     })

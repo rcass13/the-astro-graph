@@ -16,6 +16,7 @@ import HomePage from './pages/Homepage';
     
 
 const App = () =>{ 
+let userId = 0
 const [isAuth, setIsAuth] = useState(false);
 useEffect( () => {
     getUserInfoApi();
@@ -37,13 +38,15 @@ function getUserInfoApi() {
       })
       .then(data => {
         setAuth(data.isAuth)
-        console.log(data)
+        userId = data.id
+        console.log(userId)
       })
       .catch(error => {
         console.error('Error:', error);
       });
 }
 const setAuth = (val) => {
+  console.log(val)
   setIsAuth(val)
 }
     
@@ -53,8 +56,10 @@ const setAuth = (val) => {
         {isAuth ?
 
             <Routes>
-                <Route path="/" exact element={ <HomePage /> }/>
-                <Route path="*" element={<HomePage/> }/>
+                <Route path="/" exact element={ <HomePage userData={isAuth?.user} /> }/>
+                <Route path="*" element={<HomePage userData={isAuth?.user}/> }/>
+                {/* <Route path="/" exact element={ <HomePage userData={{name:"test",sign:"aries"}} /> }/>
+                <Route path="*" element={<HomePage userData={{name:"test",sign:"aries"}}/> }/> */}
             </Routes>
             :
             <Routes>

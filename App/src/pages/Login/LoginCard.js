@@ -42,7 +42,7 @@ const LoginCard = ({setAuth}) => {
           return res.json();
         })
         .then(data => {
-          setAuth(true)
+          setAuth(data)
           console.log('Login successful:', data);
         })
         .catch(error => {

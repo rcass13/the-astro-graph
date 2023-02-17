@@ -50,7 +50,7 @@ const CreateAccountCard = ({setAuth}) => {
       .then(data => {
         
         setAccounts([...accounts, {name: data.name, email: data.email, password: data.password, birthday: data.birthday}]);
-        setAuth(true)
+        setAuth(data)
         console.log('Success:', data);
       })
       .catch(error => {
