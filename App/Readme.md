@@ -15,6 +15,12 @@ When the user logs in/creates an account they can view their astrological inform
 
 <!-- screenshots here -->
 
+<img width="1792" alt="Screenshot 2023-02-16 at 7 33 28 PM" src="https://user-images.githubusercontent.com/99924972/219542881-6cd26613-a90e-4d43-9845-1cb9a85300a8.png">
+
+<img width="1792" alt="Screenshot 2023-02-16 at 7 34 03 PM" src="https://user-images.githubusercontent.com/99924972/219542942-baf23bb2-640e-4051-bcf4-08d49d2df836.png">
+
+<img width="1792" alt="Screenshot 2023-02-16 at 7 33 28 PM" src="https://user-images.githubusercontent.com/99924972/219542881-6cd26613-a90e-4d43-9845-1cb9a85300a8.png">
+
 ## Credits
 Worked on by Rose Cassidy and Joon Ruiz
 
