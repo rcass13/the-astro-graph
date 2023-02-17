@@ -7,11 +7,11 @@ import 'bootswatch/dist/vapor/bootstrap.min.css'; // Added this :boom:
 import '../../styles/bootstrap.min.css';
 
 
-function Homepage() {
+function Homepage({userData}) {
     return (
         <div className="bg-none">
             <HomepageHeader/>
-            <HomePage/>
+            <HomePage userData={userData}/>
         </div>
     );
 }
