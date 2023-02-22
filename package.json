@@ -1,0 +1,21 @@
+{
+  "name": "the-astro-graph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"cd App && npm install && npm run build && cp -R Build ../Server && cd ../Server && npm install",
+    "start": "cd Server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcass13/the-astro-graph.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rcass13/the-astro-graph/issues"
+  },
+  "homepage": "https://github.com/rcass13/the-astro-graph#readme"
+}
