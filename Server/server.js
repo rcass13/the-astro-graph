@@ -34,6 +34,7 @@ app.use(cors({
 }));
 app.use(session(ses));
 app.use('/', api);
+app.use(express.static('build'));
 
 
 

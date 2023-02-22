@@ -27,7 +27,7 @@ const LoginCard = ({setAuth}) => {
         password: password,
       };
   
-      fetch('http://localhost:3001/api/auth/login', {
+      fetch('/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

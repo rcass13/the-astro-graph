@@ -11,11 +11,12 @@ if (process.env.NODE_ENV === 'production') {
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
-    "CutMeinfor10%!",
+    process.env.DB_PASSWORD,
+
     {
-      host: '127.0.0.1',
+      host: process.env.DB_HOST,
       dialect: 'mysql',
-      port: 3306
+      port: process.env.DB_PORT
     }
   );
 }

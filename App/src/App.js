@@ -23,7 +23,7 @@ useEffect( () => {
 }, [])
 
 function getUserInfoApi() {
-    fetch('http://localhost:3001/api/auth/', {
+    fetch('/api/auth/', {
       method: 'get',
       headers: {
         'Content-Type': 'application/json'
