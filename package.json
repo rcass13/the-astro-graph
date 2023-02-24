@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"cd App && npm install && npm run build && cp -R Build ../Server && cd ../Server && npm install",
+    "build":"cd App && npm install && npm run build && cd ../Server && rm -rf ./public/* && mv ../App/build/* ./public && npm install",
     "start": "cd Server && npm start"
   },
   "repository": {
