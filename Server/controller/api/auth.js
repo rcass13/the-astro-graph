@@ -83,7 +83,7 @@ router.post('/login', async (req, res) => {
 // Signup 
 router.post('/signup', async (req, res) => {
     console.log(req.body)
-    // try {
+    try {
         let userData = await User.findOne({
             where: {
                 email: req.body.email
@@ -125,14 +125,14 @@ router.post('/signup', async (req, res) => {
                 })
         }
 
-    // }
-    // catch(e){
-    //     res
-    //         .status(500)
-    //         .json({
-    //             message: 'Server Error!'
-    //         })
-    // }
+    }
+    catch(e){
+        res
+            .status(500)
+            .json({
+                message: 'Server Error!'
+            })
+    }
 })
 
 
