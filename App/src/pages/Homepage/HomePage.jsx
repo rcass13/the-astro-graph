@@ -46,7 +46,7 @@ const HomePage = ({userData})  => {
             Your lucky time today is {astroItems.lucky_time}.
           </Typography>
           <Typography className="bg-dark">
-            As a {userData.sign},{astroItems.description}
+            As a {userData.sign}, {astroItems.description}
           </Typography>
         </div>
       </Card>
