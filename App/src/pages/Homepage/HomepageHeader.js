@@ -84,7 +84,7 @@ function refreshPage() {
                   <a  href="https://github.com/rcass13" target=".">Github</a>
                   </div>
                   <div>
-                  <a  href="https://rcass13.github.io/Module-Two-Challenge-Portfolio/" target=".">Portfolio</a>
+                  <a  href="https://rose-cassidy-react-portfolio.herokuapp.com/#home" target=".">Portfolio</a>
                   </div>
                 </div>
                 <div>
